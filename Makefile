@@ -1,14 +1,12 @@
 NAME    = push_swap
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
-INC     = -I includes/
+INC     = -I .
 
-SRCS    = srcs/main.c \
-          srcs/parse.c \
-          srcs/operations.c \
-          srcs/stack_utils.c \
-          srcs/sort_small.c \
-          srcs/turk.c
+SRCS    = push_swap.c \
+          parse.c \
+          operations.c \
+          stack_utils.c 
 
 OBJS    = $(SRCS:.c=.o)
 
