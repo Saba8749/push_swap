@@ -6,19 +6,19 @@
 /*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 01:47:06 by saba              #+#    #+#             */
-/*   Updated: 2026/03/20 02:12:44 by saba             ###   ########.fr       */
+/*   Updated: 2026/03/21 18:51:57 by saba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stdio.h"
 
 void parse(t_stack *a, int argc, char **argv)
 {
 	int i = 1;
 	while (i < argc)
 	{
-		/* code */
+		push_node(a, new_node(ft_atoi(argv[i])));
+		i++;
 	}
 	
 }

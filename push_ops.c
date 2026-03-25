@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/19 17:54:43 by segribas          #+#    #+#             */
-/*   Updated: 2026/03/21 18:54:10 by saba             ###   ########.fr       */
+/*   Created: 2026/03/21 18:15:41 by saba              #+#    #+#             */
+/*   Updated: 2026/03/21 18:16:03 by saba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int main(int argc, char **argv)
+void	pb(t_stack *a, t_stack *b)
 {
-	if (argc <= 1)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	t_stack a = {NULL, 0};
-	t_stack b = {NULL, 0};
-	(void)b;
-	parse(&a, argc, argv);
-	return (0);
+	push_node(b, pop_node(a));
+	write(1, "pb\n", 3);
+}
+void	pa(t_stack *b, t_stack *a)
+{
+	push_node(a, pop_node(b));
+	write(1, "pa\n", 3);
 }

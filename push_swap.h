@@ -7,6 +7,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				rank;
 	struct	s_node	*next;
 }	t_node;
 
@@ -32,8 +33,8 @@ void	push_node(t_stack *stack, t_node *node);
 t_node	*pop_node(t_stack *stack);
 int	stack_size(t_stack *stack);
 int	is_sorted(t_stack *stack);
-
-
+int	ft_atoi(const char *nptr);
+void parse(t_stack *a, int argc, char **argv);
 
 
 

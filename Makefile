@@ -5,7 +5,11 @@ INC     = -I .
 
 SRCS    = push_swap.c \
           parse.c \
-          operations.c \
+          push_ops.c \
+		  rotate_ops.c \
+		  swap_ops.c \
+		  rev_rotate_ops.c \
+		  utils.c \
           stack_utils.c 
 
 OBJS    = $(SRCS:.c=.o)
