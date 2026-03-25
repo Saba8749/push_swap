@@ -35,7 +35,7 @@ int	stack_size(t_stack *stack);
 int	is_sorted(t_stack *stack);
 int	ft_atoi(const char *nptr);
 void parse(t_stack *a, int argc, char **argv);
-
+void assign_ranks(t_stack *a);
 
 
 

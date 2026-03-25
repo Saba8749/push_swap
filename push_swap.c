@@ -6,7 +6,7 @@
 /*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:54:43 by segribas          #+#    #+#             */
-/*   Updated: 2026/03/21 18:54:10 by saba             ###   ########.fr       */
+/*   Updated: 2026/03/25 03:31:58 by saba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int main(int argc, char **argv)
 	t_stack b = {NULL, 0};
 	(void)b;
 	parse(&a, argc, argv);
+	assign_ranks(&a);
 	return (0);
 }
