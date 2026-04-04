@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 19:05:51 by saba              #+#    #+#             */
-/*   Updated: 2026/03/25 03:14:29 by saba             ###   ########.fr       */
+/*   Updated: 2026/04/04 20:56:34 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,24 @@ void assign_ranks(t_stack *a)
 		current = current->next;
 	}
 	
+}
+
+void k_sort1(t_stack *a, t_stack *b)
+{
+	int chunk_size;
+	int pushed_elements;
+
+	chunk_size = square_root(a->size) * 14 / 10;
+	pushed_elements = 0;
+
+	while(a->size > 0)
+	{
+		if(a->top->rank < pushed_elements + chunk_size)
+		{
+			pb(a, b);
+			pushed_elements++;
+		}
+		else
+			ra(a);
+	}
 }

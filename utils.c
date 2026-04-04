@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 02:14:16 by saba              #+#    #+#             */
-/*   Updated: 2026/03/20 02:17:16 by saba             ###   ########.fr       */
+/*   Updated: 2026/04/04 20:22:28 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,13 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return ((int)(sign * result));
+}
+int	square_root(int value)
+{
+	int i;
+	i = 0;
+
+	while(i * i <= value)
+		i++;
+	return (i - 1);
 }

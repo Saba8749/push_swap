@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:54:43 by segribas          #+#    #+#             */
-/*   Updated: 2026/03/25 03:31:58 by saba             ###   ########.fr       */
+/*   Updated: 2026/04/04 20:52:40 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main(int argc, char **argv)
 	(void)b;
 	parse(&a, argc, argv);
 	assign_ranks(&a);
+	k_sort1(&a, &b);
 	return (0);
 }
