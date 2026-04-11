@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:55:52 by segribas          #+#    #+#             */
-/*   Updated: 2026/03/06 22:51:00 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/11 19:06:22 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ t_node	*new_node(int value)
 	return (node);
 }
 
+// put given (popped) node into given stack
 void	push_node(t_stack *stack, t_node *node)
-
 {
 	node->next = stack->top;
 	stack->top = node;
 	stack->size++;
 }
 
+// pop top node from stack (removes node from stack)
 t_node	*pop_node(t_stack *stack)
-
 {
 	t_node	*node;
 
@@ -44,22 +44,23 @@ t_node	*pop_node(t_stack *stack)
 }
 
 int	stack_size(t_stack *stack)
-
 {
 	return (stack->size);
 }
 
-int	is_sorted(t_stack *stack)
-
+// check if given stack is already sorted in ascending order
+bool	is_sorted(t_stack *stack)
 {
 	t_node	*current;
 
 	current = stack->top;
-	while (current != NULL && current->next)
+	while (current && current->next)
 	{
 		if (current->value > current->next->value)
-			return (0);
+		{
+			return (false);
+		}
 		current = current->next;
 	}
-	return (1);
+	return (true);
 }

@@ -6,50 +6,110 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 19:05:51 by saba              #+#    #+#             */
-/*   Updated: 2026/04/04 20:56:34 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/11 19:07:15 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void assign_ranks(t_stack *a)
+void	sort_two(t_stack *a)
 {
-	int counter = 0;
-	t_node *current = a->top;
-	t_node *inner;
+	sa(a);
+}
 
+void	sort_three(t_stack *a)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = a->top->value;
+	second = a->top->next->value;
+	third = a->top->next->next->value;
+	if (first > second && second > third)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (first > third && third > second)
+		ra(a);
+	else if (second > first && second > third && first > third)
+		rra(a);
+	else if (first > second && first < third)
+		sa(a);
+	else if (first < third && second > third)
+	{
+		rra(a);
+		sa(a);
+	}
+}
+
+void	assign_ranks(t_stack *a)
+{
+	int		counter;
+	t_node	*current;
+	t_node	*inner;
+
+	counter = 0;
+	current = a->top;
 	while (current != NULL)
 	{
-		counter = 0;
 		inner = a->top;
 		while (inner != NULL)
 		{
 			if (inner->value < current->value)
-			counter++;
+				counter++;
 			inner = inner->next;
 		}
 		current->rank = counter;
+		counter = 0;
 		current = current->next;
 	}
-	
 }
 
-void k_sort1(t_stack *a, t_stack *b)
+void	k_sort1(t_stack *a, t_stack *b)
 {
-	int chunk_size;
-	int pushed_elements;
+	int	chunk_size;
+	int	count;
 
-	chunk_size = square_root(a->size) * 14 / 10;
-	pushed_elements = 0;
-
-	while(a->size > 0)
+	chunk_size = (int)square_root(a->size) * 1.4;
+	count = 0;
+	while (a->size > 0)
 	{
-		if(a->top->rank < pushed_elements + chunk_size)
+		if (a->top->rank <= count)
 		{
 			pb(a, b);
-			pushed_elements++;
+			rb(b);
+			count++;
+		}
+		else if (a->top->rank < count + chunk_size)
+		{
+			pb(a, b);
+			count++;
 		}
 		else
 			ra(a);
+	}
+}
+
+void	k_sort2(t_stack *a, t_stack *b)
+{
+	int	moves;
+
+	while (b->size > 0)
+	{
+		moves = get_moves(b);
+		if (moves > 0)
+		{
+			while (moves-- > 0)
+				rb(b);
+		}
+		else
+		{
+			moves = -moves;
+			while (moves-- > 0)
+				rrb(b);
+		}
+		pa(b, a);
 	}
 }

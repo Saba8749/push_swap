@@ -1,7 +1,8 @@
 NAME    = push_swap
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -g
 INC     = -I .
+OBJ_DIR	= obj
 
 SRCS    = push_swap.c \
           parse.c \
@@ -11,20 +12,24 @@ SRCS    = push_swap.c \
 		  rev_rotate_ops.c \
 		  utils.c \
 		  sort.c \
-          stack_utils.c 
+          stack_utils.c \
+		  utils2.c
 
-OBJS    = $(SRCS:.c=.o)
+OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
