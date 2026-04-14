@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/21 19:05:51 by saba              #+#    #+#             */
-/*   Updated: 2026/04/11 19:07:15 by segribas         ###   ########.fr       */
+/*   Created: 2026/04/14 15:43:44 by segribas          #+#    #+#             */
+/*   Updated: 2026/04/14 16:09:23 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,72 +44,25 @@ void	sort_three(t_stack *a)
 	}
 }
 
-void	assign_ranks(t_stack *a)
+void	sort_four(t_stack *a, t_stack *b)
 {
-	int		counter;
-	t_node	*current;
-	t_node	*inner;
-
-	counter = 0;
-	current = a->top;
-	while (current != NULL)
-	{
-		inner = a->top;
-		while (inner != NULL)
-		{
-			if (inner->value < current->value)
-				counter++;
-			inner = inner->next;
-		}
-		current->rank = counter;
-		counter = 0;
-		current = current->next;
-	}
+	
 }
 
-void	k_sort1(t_stack *a, t_stack *b)
+void	sort_five(t_stack *a, t_stack *b)
 {
-	int	chunk_size;
-	int	count;
-
-	chunk_size = (int)square_root(a->size) * 1.4;
-	count = 0;
-	while (a->size > 0)
+	while (b->size < 2)
 	{
-		if (a->top->rank <= count)
-		{
+		if (a->top->rank == 0 ||a->top->rank == 1)
 			pb(a, b);
-			rb(b);
-			count++;
-		}
-		else if (a->top->rank < count + chunk_size)
-		{
-			pb(a, b);
-			count++;
-		}
 		else
 			ra(a);
 	}
-}
-
-void	k_sort2(t_stack *a, t_stack *b)
-{
-	int	moves;
-
-	while (b->size > 0)
+	sort_three(a);
+	if (b->top->rank < b->top->next->rank)
 	{
-		moves = get_moves(b);
-		if (moves > 0)
-		{
-			while (moves-- > 0)
-				rb(b);
-		}
-		else
-		{
-			moves = -moves;
-			while (moves-- > 0)
-				rrb(b);
-		}
+		sb(b);
+		pa(b, a);
 		pa(b, a);
 	}
 }

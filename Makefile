@@ -5,15 +5,19 @@ INC     = -I .
 OBJ_DIR	= obj
 
 SRCS    = push_swap.c \
-          parse.c \
-          push_ops.c \
+		  parse.c \
+		  validate.c \
+		  free.c \
+		  ft_utils.c \
+		  Split.c \
+		  algo_utils.c \
+		  push_ops.c \
 		  rotate_ops.c \
 		  swap_ops.c \
 		  rev_rotate_ops.c \
-		  utils.c \
-		  sort.c \
-          stack_utils.c \
-		  utils2.c
+		  ksort.c \
+		  stack_utils.c \
+		  small_sort.c
 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
