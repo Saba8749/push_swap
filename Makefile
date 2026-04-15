@@ -17,7 +17,8 @@ SRCS    = push_swap.c \
 		  rev_rotate_ops.c \
 		  ksort.c \
 		  stack_utils.c \
-		  small_sort.c
+		  small_sort.c \
+		  sort_stack.c
 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 

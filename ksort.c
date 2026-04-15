@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 19:05:51 by saba              #+#    #+#             */
-/*   Updated: 2026/04/15 14:16:31 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:26:29 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,8 @@ void	k_sort1(t_stack *a, t_stack *b)
 {
 	int	chunk_size;
 	int	count;
-	if (a->size <= 100)
-		chunk_size = 20;
-	else if (a->size <= 500)
-		chunk_size = 29;
-	else
-		chunk_size = (int)square_root(a->size) * 1.4;
+
+	chunk_size = get_chunk_size(a->size);
 	count = 0;
 	while (a->size > 0)
 	{

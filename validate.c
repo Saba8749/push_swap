@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:23:21 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/14 14:49:52 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:39:46 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	duplicate_check(t_stack *a)
 
 int	is_digit(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
@@ -59,9 +59,9 @@ int	min_max_check(char **tokens)
 	{
 		if (!is_digit(tokens[i]))
 			return (-1);
-		if	(ft_atol(tokens[i]) > 2147483647 || ft_atol(tokens[i]) < -2147483648)
+		if (ft_atol(tokens[i]) > 2147483647 || ft_atol(tokens[i]) < -2147483648)
 			return (-1);
-		i++;	
-	}	
+		i++;
+	}
 	return (0);
 }

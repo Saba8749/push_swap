@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:51:09 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/14 15:40:56 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:36:08 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	free_tokens(char **tokens, int argc)
 {
+	int	i;
+
 	if (argc != 2)
 		return ;
-	int i;
-
 	i = 0;
-	while(tokens[i])
+	while (tokens[i])
 	{
 		free(tokens[i]);
 		i++;
@@ -29,15 +29,15 @@ void	free_tokens(char **tokens, int argc)
 
 void	free_stack(t_stack *stack)
 {
-	t_node *current;
-    t_node	*next;
+	t_node	*current;
+	t_node	*next;
 
 	current = stack->top;
-	while(current)
+	while (current)
 	{
-        next = current->next;
-        free(current);
-        current = next;
+		next = current->next;
+		free(current);
+		current = next;
 	}
 	stack->top = NULL;
 	stack->size = 0;

@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/19 17:54:43 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/15 15:57:34 by segribas         ###   ########.fr       */
+/*   Created: 2026/04/15 15:27:44 by segribas          #+#    #+#             */
+/*   Updated: 2026/04/15 15:55:17 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_stack(t_stack *a, t_stack *b)
 {
-	t_stack	a;
-	t_stack	b;
-
-	if (argc <= 1)
+	assign_ranks(a);
+	if (a->size <= 5)
 	{
-		write(2, "Error\n", 6);
-		return (1);
+		if (a->size == 2)
+			sort_two(a);
+		else if (a->size == 3)
+			sort_three(a);
+		else if (a->size == 4)
+			sort_four(a, b);
+		else if (a->size == 5)
+			sort_five(a, b);
 	}
-	a = (t_stack){NULL, 0};
-	b = (t_stack){NULL, 0};
-	if (parse(&a, argc, argv))
+	else
 	{
-		write(2, "Error\n", 6);
-		free_stack(&a);
-		return (-1);
+		k_sort1(a, b);
+		k_sort2(a, b);
 	}
-	if (is_sorted(&a))
-	{
-		free_stack(&a);
-		return (0);
-	}
-	sort_stack(&a, &b);
-	free_stack(&a);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:44 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/15 12:34:06 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:39:10 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_four(t_stack *a, t_stack *b)
 	{
 		if (a->top->rank == 0)
 			pb(a, b);
-		else 
+		else
 			ra(a);
 	}
 	sort_three(a);

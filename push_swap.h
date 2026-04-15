@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 19:08:35 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/15 12:39:40 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 15:31:25 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void				sort_four(t_stack *a, t_stack *b);
 void				sort_five(t_stack *a, t_stack *b);
 void				push_node(t_stack *stack, t_node *node);
 void				assign_ranks(t_stack *a);
-
-
+void				sort_stack(t_stack *a, t_stack *b);
 bool				is_sorted(t_stack *stack);
 
 t_node				*new_node(int value);
@@ -66,6 +65,7 @@ int					parse(t_stack *a, int argc, char **argv);
 int					get_moves(t_stack *b);
 int					is_digit(char *str);
 int					min_max_check(char **tokens);
+int					get_chunk_size(int size);
 long				ft_atol(const char *nptr);
 
 char				**ft_split(char const *s, char c);

@@ -6,12 +6,11 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:57:55 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/14 14:58:36 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:35:27 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	square_root(int value)
 {
@@ -61,4 +60,14 @@ int	get_moves(t_stack *b)
 	if (forward <= reverse)
 		return (forward);
 	return (-reverse);
+}
+
+int	get_chunk_size(int size)
+{
+	if (size <= 100)
+		return (20);
+	else if (size <= 500)
+		return (29);
+	else
+		return ((int)square_root(size) * 1.4);
 }

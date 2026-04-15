@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:54:16 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/14 15:01:03 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:36:24 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 long	ft_atol(const char *nptr)
 {
-	int			i;
-	int			sign;
-	int			digit;
-	long		result;
+	int		i;
+	int		sign;
+	int		digit;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -68,4 +68,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	*d = '\0';
 	return (len_src);
 }
-
