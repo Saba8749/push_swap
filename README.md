@@ -105,8 +105,5 @@ Each node holds its value, its rank (position in sorted order), and a pointer to
 
 ## Resources
 
-- [Wikipedia — Sorting algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm) — overview of sorting concepts and complexity
-- [Linked list data structure](https://en.wikipedia.org/wiki/Linked_list) — how linked lists work, used for both stacks
-- [Stack (abstract data type)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) — push/pop semantics
-- [push_swap visualizer](https://github.com/o-reo/push_swap_visualizer) — used to visualize and count operations during development
-- Claude AI (claude.ai) — used for debugging memory leaks, explaining norminette errors, and understanding algorithm behavior. All code was written and understood by the author; AI was used as a reference and explainer, not as a code generator.
+- [AzerSD — ksort-push_swap](https://github.com/AzerSD/ksort-push_swap) — reference for the chunked sorting approach
+- Claude AI (claude.ai) was used to ask questions about sorting algorithms, linked lists, and general C concepts during development.
