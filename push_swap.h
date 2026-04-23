@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 19:08:35 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/15 15:31:25 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/20 15:13:52 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void				sort_two(t_stack *a);
 void				sort_three(t_stack *a);
 void				sort_four(t_stack *a, t_stack *b);
 void				sort_five(t_stack *a, t_stack *b);
-void				push_node(t_stack *stack, t_node *node);
+void				push_node(t_stack *stack, t_node *node	);
 void				assign_ranks(t_stack *a);
 void				sort_stack(t_stack *a, t_stack *b);
 bool				is_sorted(t_stack *stack);

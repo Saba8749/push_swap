@@ -6,7 +6,7 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:44 by segribas          #+#    #+#             */
-/*   Updated: 2026/04/15 14:39:10 by segribas         ###   ########.fr       */
+/*   Updated: 2026/04/23 18:10:48 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,14 @@ void	sort_two(t_stack *a)
 
 void	sort_three(t_stack *a)
 {
-	int	first;
-	int	second;
-	int	third;
-
-	first = a->top->value;
-	second = a->top->next->value;
-	third = a->top->next->next->value;
-	if (first > second && second > third)
-	{
-		sa(a);
-		rra(a);
-	}
-	else if (first > third && third > second)
+	if (a->top->value > a->top->next->value
+		&& a->top->value > a->top->next->next->value)
 		ra(a);
-	else if (second > first && second > third && first > third)
+	else if (a->top->next->value > a->top->value
+		&& a->top->next->value > a->top->next->next->value)
 		rra(a);
-	else if (first > second && first < third)
+	if (a->top->value > a->top->next->value)
 		sa(a);
-	else if (first < third && second > third)
-	{
-		rra(a);
-		sa(a);
-	}
 }
 
 void	sort_four(t_stack *a, t_stack *b)
